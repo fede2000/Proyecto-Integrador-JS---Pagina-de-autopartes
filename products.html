@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/1fc8959a7c.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Autopartes VW Viejitos</title>
+</head>
+<body>
+    <header class="head">
+        <div class="nav">
+            <div class="menu__cat">
+                <i class="fa-solid fa-bars" id="menuImg"></i>
+            </div>
+
+            <div class="img-principal">
+                <a href="./index.html"><img src="./assets/images/logo.png" alt=""></a>
+            </div>
+
+            <ul class="menu__navegacion">
+                <li class="item-nav">
+                    <div class="buscador">
+                        <input class="hide" type="text" placeholder="Buscar..." id="inputBuscador">
+                        <button><i class="fa-solid fa-magnifying-glass" id="buttonBuscador"></i></button>
+                    </div>
+                </li>
+                <li class="item-nav"><i class="fa-solid fa-user"></i></li>
+                <li class="item-nav item-cart" id="cart"><i class="fa-solid fa-cart-shopping" ></i></li>
+            </ul>
+        </div>
+        <ul class="menu__categorias hide">
+            <i class="fa-regular fa-circle-xmark" id="exitMenu"></i>
+            <h2>CATEGORIAS</h2>
+            <li class="item">ILUMINACION</li>
+            <li class="item">PARAGOLPES</li>
+            <li class="item">BATERIAS</li>
+            <li class="item">RODADOS</li>
+        </ul>
+
+        <div class="cart hideCart">
+            <i class="fa-solid fa-circle-xmark" id="exit"></i>
+            <h2>Tu carrito</h2>
+            <div class="cart-container">
+            </div>
+
+            <div class="cart-resume">
+                <div class="cart-subTotal">
+                    <p>Subtotal:</p>
+                    <span class="sub"></span>
+                </div>
+                <div class="cart-envio">
+                    <p>Envio:</p>
+                    <span>Gratis</span>
+                </div>
+                <hr>
+                <div class="cart-total">
+                    <p>Total:</p>
+                    <span class="total"></span>
+                </div>
+
+            </div>
+            <button class="btn-buy">Comprar</button>
+        </div>
+        <div class="overlay"></div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="container_page_products">
+            <div class="container-left">
+                <h2 class="title-busqueda">Repuestos para Senda</h2>
+                <p><span>45</span> resultados</p>
+
+                <div class="price">
+                    <h3>Precio</h3>
+                    <ul>
+                        <li>Hasta $ 1.500</li>
+                        <li>$ 1.500 a $ 4.000</li>
+                        <li>Más de $4.000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-main">
+
+            </div>
+        </div>
+
+                <!-- inicia slider principal -->
+                <section class="container-slider hide">
+                    <div class="slider" id="slider">
+                        <!-- slider 1 -->
+                        <div class="slider__section slider__section--uno">
+                            <div class="img">
+                                <img src="../assets/images/WhatsApp Image 2021-03-12 at 4.14.50 PM (1).jpeg" alt="">
+                            </div>
+                            <div class="texto__slider">
+                                <h2>Contamos con una gran variedad de productos</h2>
+                                <p>Busca el repuesto necesario para que tu auto quede flama.</p>
+                            </div>  
+        
+                        </div>
+                        <!-- slider 2 -->
+                        <div class="slider__section slider__section--dos">
+                            <div class="slider-2">
+                                <div class="img">
+                                    <img src="./assets/images/img-logo.png" alt="">
+                                </div>
+                                <div class="texto__slider">
+                                    <h2>AUTOPARTES</h2>
+                                    <hr>
+                                    <h3>VIEJITOS</h3>
+                                </div>  
+                            </div>
+                        </div>
+                        <!-- slider 3 -->
+                        <div class="slider__section slider__section--tres">
+                        </div>
+                        <!-- slider 4 -->
+                        <div class="slider__section slider__section--cuatro">
+                            <h1><span>3</span> COUTAS</h1>
+                            <p>SIN INTERÉS</p>
+                        </div>
+                    </div>
+                    <!-- boton izquierda -->
+                    <div class="slider__btn slider__btn--left" id="btn--left"></div>
+                    <!-- boton derecha -->
+                    <div class="slider__btn slider__btn--right" id="btn--right"></div>
+                </section>
+        <footer>
+            <div class="footer-container">
+                <a href="./index.html" class="img-logo"><img src="./assets/images/logo.png" alt=""></a>
+                <ul class="category-footer">
+                    <li>Iluminacion</li>
+                    <li>Paragolpes</li>
+                    <li>Baterias</li>
+                    <li>Tazas</li>
+                    <li>Carroceria</li>
+                </ul>
+                <div class="contacto">
+                    <div class="redes">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <p>Tel: (11) 123123</p>
+                    <p>autopartesviejitos@gmail.com</p>
+                    <p>Calle Falsa 123, Moreno, Buenos Aires</p>
+                </div>
+            </div>
+            <hr>
+        </footer>
+    </main>
+
+    <script src="./assets/main.js"></script>
+</body>
+</html>

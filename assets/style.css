@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +15,41 @@
     --thin: 200;
     --light: 300;
     --medium: 500;
+}
+/* -----------------------clases reutilizables ----------------*/
+.container-products{
+    margin: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+.container{
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.title-section{
+    margin: 50px 0;
+    font-weight: 500;
+}
+
+.section{
+    width: 90%;
+    margin: 0px auto;
+    max-width: 1400px;
+}
+
+
+/* ------------------------------------------------------------ */
+
+
+
+body{
+    font-family: "Montserrat";
 }
 
 /* nav */
@@ -127,9 +165,7 @@
 .hide {
     display: none;
 }
-.hideCart {
-    display: none;
-}
+
 
 .menu__categorias::-webkit-scrollbar {
     display: none;
@@ -143,10 +179,10 @@
     cursor: pointer;
 }
 
-#exitCart {
+#exit {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
     cursor: pointer;
     color: var(--color-icon);
     font-size: 30px;
@@ -155,9 +191,8 @@
 
 .cart {
     position: absolute;
-    display: none;
     top: 0px;
-    left: 0px;
+    right: 0px;
     padding: 50px 30px;
     background: var(--color-principal);
     display: flex;
@@ -169,6 +204,11 @@
     min-width: 375px;
     box-shadow: inset 0px -9px 50px -22px #000000;
 
+
+}
+
+.hideCart {
+    display: none;
 }
 
 .cart-container {
@@ -181,7 +221,7 @@
     display: none;
 }
 
-.cart h1 {
+.cart h2 {
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 600;
@@ -244,3 +284,718 @@
     transform: translate(0%);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
+
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background: rgba(37, 37, 37, 0.2);
+    box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+    overflow: hidden;
+}
+
+.show-overlay {
+    display: block;
+}
+
+
+/* main */
+
+main{
+   background-color: #e2dfdf;
+   position: relative;
+   width: 100%;
+   height: 100vh;
+}
+
+.hidden{
+    overflow: hidden;
+}
+/* slider */
+
+
+.container-slider{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    
+}
+
+.slider{
+    display: flex;
+    width: 400%;
+    height: 400px;
+    margin-left: -100%;
+}
+
+.slider__section{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.slider__section--uno{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.slider__section--uno img{
+    width: 100%;
+}
+
+.slider__section--uno .img{
+    width: 50%;
+}
+.slider__section--uno .texto__slider{
+    width: 50%;
+
+}
+.slider__section--uno .texto__slider h2{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.slider__section--uno .texto__slider p{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.slider__section--dos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.slider-2{
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+
+}
+.slider__section--dos img{
+    width: 350px;
+    height: 350px;
+
+}
+.slider__section--dos .img{
+    width: 50%;
+
+}
+
+.slider__section--dos .texto__slider{
+    width: 50%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #87b7de;
+}
+.slider__section--dos hr{
+    width: 100%;
+    height: 10px;
+    border: none;
+    background-color: var(--color-principal);
+}
+.slider__section--dos h2{
+    font-size: 3.5rem;
+}
+.slider__section--dos h3{
+    font-size: 3.1rem;
+}
+.slider__section--tres{
+    background-image: url("../assets/images/volkswagen-senda-1990.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.slider__section--cuatro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+.slider__section--cuatro h1{
+    font-size: 70px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transform: scaleY(1.7);
+
+
+}
+.slider__section--cuatro h1 span{
+    font-size: 90px;
+}
+
+.slider__section--cuatro p{
+    font-size: 50px;
+    background-color: var(--color-principal);
+    padding: 10px 50px;
+    font-family: 'Roboto',sans-serif;
+    color: white;
+}
+
+.slider__btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    background-color: rgba(255, 255, 255, 0.407);
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.slider__btn:hover{
+    background-color: white;
+}
+
+.slider__btn--left{
+    left: 10px;
+    background-image: url('../assets/images/leftarrow.svg');
+    background-size: cover;
+
+}
+
+.slider__btn--right{
+    right: 10px;
+    background-image: url("../assets/images/rightarrow.svg");
+    background-size: cover;
+}
+
+/* ---------------------finaliza slider--------------- */
+
+
+/* metodos de pago */
+
+.section__info__pagos{
+    width: 100%;
+    margin-top: 80px;
+    background-color: #e2dfdf;
+}
+
+.pagos-container{
+    background-color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-pago{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.img-pago{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3b7de7;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #3b7de7;
+}
+
+.img-pago:hover{
+    background-color: #b8d1e5;
+}
+
+
+.info{
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-info{
+    font-size: 1.2rem;
+    margin: 5px;
+    font-weight: 400;
+}
+
+.description-info{
+    font-size: .8rem;
+    color: #817c7c;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.description-info:hover{
+    color: #3b7de7;
+}
+
+/* seccion promociones bancarias */
+.promociones-bancarias{
+    background-color: white;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10;
+    border-radius: 8px;
+
+    height: 800px;
+    overflow-y: scroll;
+}
+.promo-container{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    position: relative;
+
+}
+
+.head-promo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    height: 40px;
+}
+
+.head-promo i{
+    font-size: 23px;
+}
+.promo-container h3{
+    color: green;
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.promo-container h3 span{
+    color: rgb(54, 54, 54);
+}
+
+.promo-container p{
+    margin-top: 10px;
+}
+
+.img-promo{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.img-promo-tarjetas{
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+.img-promo img{
+    width: 25px;
+}
+.img-promo-tarjetas img{
+    width: 45px;
+}
+.promo-container h4{
+    color: #838383;
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.promo-container hr{
+    margin-top: 30px;
+}
+
+.hide-promociones-bancarias{
+    display: none;
+}
+
+/* seccion medios de pago */
+.medios-pago{
+
+    position: absolute;
+}
+
+.mercado-credito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    border: 1px solid #343333;
+}
+
+.mercado-credito img{
+    width: 130px;
+    margin-left: 10px;
+}
+
+.mercado-credito .info h3{
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.mercado-credito .info p{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.mercado-credito button{
+    width: 130px;
+    height: 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #c2e2fd;
+    color: #0b91ff;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.img-promo .img-efectivo1 img{
+    width: 40px;
+}
+.img-promo .img-efectivo2 img{
+    width: 85px;
+}
+
+.img-efectivo1 p{
+    font-size: .8rem;
+    width: 100px;
+}
+.img-efectivo2 p{
+    font-size: .8rem;
+    width: 100px;
+}
+.hide-medios-pago{
+    display: none;
+}
+
+
+/* Seccion de buscapor modelos */
+
+.section__models{
+    background-color: #e2dfdf;
+    padding-top: 10px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+
+.models-container{
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.card-models{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    height: 180px;
+    border: 1px solid #93a8b9;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-models:hover{
+    background-color: #5c8eb6;
+}
+
+
+.img-model{
+    width: 150px;
+    height: 150px;
+}
+
+/* cards models*/
+
+.cards{
+    width: 280px;
+    background-color: white;
+}
+
+.cards:hover{
+    box-shadow: 0px 2px 22px 1px rgba(0,0,0,0.86);
+-webkit-box-shadow: 0px 2px 22px 1px rgba(0,0,0,0.86);
+-moz-box-shadow: 0px 2px 22px 1px rgba(0,0,0,0.86);
+}
+.img{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.img-card{
+    width: 90%;
+}
+
+.info-card{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.price{
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.description{
+    color: #888585;
+}
+
+.button{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+.add-btn{
+    margin: 0 auto;
+    border: 1px solid #3b7de7;
+    background-color: #3b7de7;
+    color: white;
+    font-size: 1.1rem;
+    padding: 5px 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.add-btn:hover{
+    background-color: #5c8eb6;
+}
+
+/* card category */
+
+
+.section__category{
+    background-color: #e2dfdf;
+    padding-top: 10px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.category-container{
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+}
+
+.div1 {
+    grid-area: 1 / 1 / 3 / 2;
+
+}
+.div2 {
+
+    grid-area: 1 / 2 / 2 / 3; 
+    }
+.div3 {
+
+    grid-area: 2 / 2 / 3 / 3; 
+}
+
+.card-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.img-cat{
+    width: 100%;
+    height: 100%;
+}
+.img-category{
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+
+.titulo-category{
+    z-index: 10;
+    color: white;
+    position: absolute;
+    background-color: #00000096;
+    top: 87%;
+    left: 0%;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+
+}
+.div1 .titulo-category{
+    top: 93.6%;
+}
+
+.card-category:hover .titulo-category{
+    background-color: #000000c6;
+}
+
+/* section products-recomendation */
+
+.section__products__recomendation{
+    margin: 50px 0;
+}
+
+/* section ver todos los productos */
+
+.section__ver__todos{
+    background-image: url("./images/fondo-herramientas.jpg");
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 100px auto;
+}
+
+.ver-todos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background-color: #767575a3;
+}
+
+.title-ver-todos{
+    color: white;
+}
+
+.btn-ver-todos{
+    margin: 20px auto;
+    padding: 10px 35px;
+    background-color: #0362b0;
+    border: 1px solid #2323238e;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-ver-todos:hover{
+    border: 1px solid white;
+}
+/* footer main */
+
+.footer_main{
+    width: 100%;
+    background-color: white;
+}
+
+.footer_main-container{
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-foo-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+}
+
+.card-foo-main img{
+    width: 100px;
+}
+
+.title-card-foo{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5c5b5b;
+    line-height: 1.4;
+}
+
+.description-card-foo{
+    color: #5c5b5b;
+    text-align: center;
+}
+
+footer{
+    width: 100%;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.footer-container{
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.img-logo{
+    width: 150px;
+}
+
+.category-footer{
+    width: 150px;
+    list-style: none;
+}
+
+.category-footer li{
+    cursor: pointer;
+}
+.category-footer li:hover{
+    color: rgb(213, 211, 211);
+}
+
+
+.contacto{
+    width: 150px;
+}
+
+.redes{
+    display: flex;
+    justify-content: baseline;
+    gap: 30px;
+}
+.redes i{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
