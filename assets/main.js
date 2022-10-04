@@ -22,6 +22,11 @@ const verMasPagosDos = document.querySelector(".ver-tres")
 const verMasPagosTres = document.querySelector(".ver-cuatro")
 const mainHidden = document.querySelector(".main")
 
+const productsModels = document.querySelector(".product__models")
+const modelCard = document.querySelector(".models-container")
+const listModel = document.querySelectorAll(".cards-model")
+const titleContainerModels = document.querySelector("#title-container-models")
+
 // todos los medios de pago
 const todosMediosPago = document.querySelector(".medios-pago");
 
@@ -168,9 +173,62 @@ setInterval(function(){
     Next();
 }, 5000);
 
+// funcion para renderizar productos por modelo de auto elegido
+const renderCard = product => {
 
-showCart()
-showBuscador()
-showMenuCate()
-showPromoBanco()
-showTodosMediosPago()
+    const{ id, price, description, cardImg} =  product;
+    console.log("rendercard")
+    return`
+    <div class="cards">
+    <div class="img">                        
+        <img src="${cardImg}" alt="" class="img-card">
+    </div>
+    <div class="info-card">
+        <h2 class="price">${price}</h2>
+        <p class="description">${description}</p>
+    </div>
+    <div class="button">
+        <button class="add-btn"
+        data-id="${id}"
+        data-description="${description}"
+        data-img="${cardImg}"
+        data-price="${price}">Agregar</button>
+    </div>
+</div>
+    `
+}
+
+
+const renderModel = (model) => {
+    
+    const listaProductos = productsData.filter(p => p.model === model);
+    productsModels.innerHTML = listaProductos.map(renderCard).join('');
+
+};
+
+// const filterProducts = (e) => {
+//     if(!e.target.classList.contains('model')) return;
+//     console.log("ffilter")
+//     renderModel(e.target.dataset.category,0)
+// };
+const filterProducts = (e) =>{
+    if(!e.target.classList.contains('model')) return;
+    // changeFilter(e);
+    renderModel(e.target.dataset.model,0)
+    titleContainerModels.innerHTML = "Repuestos de VW "+e.target.dataset.model
+
+};
+
+
+
+const init = () =>{
+    document.addEventListener('DOMContentLoaded', renderModel);
+    showCart()
+    showBuscador()
+    showMenuCate()
+    showPromoBanco()
+    showTodosMediosPago()
+    modelCard.addEventListener("click",filterProducts)
+}
+
+init()
