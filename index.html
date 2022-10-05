@@ -10,70 +10,99 @@
 </head>
 <body>
     <header class="head">
+        <!-- init nav -->
         <div class="nav">
+            <!-- init left nav - Boton de menu -->
             <div class="menu__cat">
                 <i class="fa-solid fa-bars" id="menuImg"></i>
             </div>
-
-            <div class="img-principal">
+            <!-- end left nav - boton de menu -->
+            
+            <!-- init center nav - imagen logo -->
+            <div class="img__principal">
                 <a href="./index.html"><img src="assets/images/logo.png" alt=""></a>
             </div>
+            <!-- end center nav - imagen logo -->
 
+            <!-- init right nav - busqueda-user-carrito-->
             <ul class="menu__navegacion">
+                <!-- buscador -->
                 <li class="item-nav">
                     <div class="buscador">
                         <input class="hide" type="text" placeholder="Buscar..." id="inputBuscador">
                         <button><i class="fa-solid fa-magnifying-glass" id="buttonBuscador"></i></button>
                     </div>
                 </li>
-                <li class="item-nav"><a href=""><i class="fa-solid fa-user"></i></a></li>
+                <!-- user -->
+                <li class="item-nav"><a href="./login.html"><i class="fa-solid fa-user"></i></a></li>
+                <!-- carrito -->
                 <li class="item-nav item-cart" id="cart"><i class="fa-solid fa-cart-shopping" ></i></li>
             </ul>
+            <!-- end right nav - busqueda-user-carrito-->
         </div>
+        <!-- end nav -->
+        <!-- init menu categories -->
         <ul class="menu__categorias hide">
+            <!-- boton exit menu -->
             <i class="fa-regular fa-circle-xmark" id="exitMenu"></i>
             <h2>CATEGORIAS</h2>
-            
+            <!-- item 1 -->
             <a href="#title-container-category" class="item" data-secundaria="iluminacion"><li class="item" data-secundaria="iluminacion">ILUMINACION</li></a>
+            <!-- item 2 -->
             <a href="#title-container-category" class="item" data-secundaria="carroceria"><li class="item" data-secundaria="carroceria">CARROCERIA</li></a>
+            <!-- item 3 -->
             <a href="#title-container-category" class="item" data-secundaria="baterias"><li class="item" data-secundaria="baterias">BATERIAS</li></a>
+            <!-- item 4 -->
             <a href="#title-container-category" class="item" data-secundaria="rodados"><li class="item" data-secundaria="rodados">RODADOS</li></a>
+            <!-- item 5 -->
             <a href="#title-container-category" class="item" data-secundaria="alternador"><li class="item" data-secundaria="alternador">ALTERNADORES</li></a>
+            <!-- item 6 -->
             <a href="#title-container-category" class="item" data-secundaria="motor"><li class="item" data-secundaria="motor">MOTOR</li></a>
+            <!-- item 7 -->
             <a href="#title-container-category" class="item" data-secundaria="frenos"><li class="item" data-secundaria="frenos">FRENOS</li></a>
+            <!-- item 8 -->
             <a href="#title-container-category" class="item" data-secundaria="radiadores"><li class="item" data-secundaria="radiadores">RADIADORES</li></a>
         </ul>
+        <!-- end menu categories -->
 
+        <!-- init carrito -->
         <div class="cart hideCart">
             <i class="fa-solid fa-circle-xmark" id="exit"></i>
             <h2>Tu carrito</h2>
+            <!-- contenedor de productos agregados al carrito -->
             <div class="cart-container">
             </div>
-
+            <!-- resumen -->
             <div class="cart-resume">
+                <!-- subtotal -->
                 <div class="cart-subTotal">
                     <p>Subtotal:</p>
                     <span class="sub"></span>
                 </div>
+                <!-- costo envio -->
                 <div class="cart-envio">
                     <p>Envio:</p>
                     <span>Gratis</span>
                 </div>
                 <hr>
+                <!-- total -->
                 <div class="cart-total">
                     <p>Total:</p>
                     <span class="total"></span>
                 </div>
 
             </div>
+            <!-- boton de comprar -->
             <button class="btn-buy">Comprar</button>
         </div>
+        <!-- fondo borroso -->
         <div class="overlay"></div>
         </nav>
     </header>
+    <!-- init main -->
     <main class="main">
-        <!-- inicia slider principal -->
-        <section class="container-slider">
+        <!-- init slider section -->
+        <section class="container__slider">
             <div class="slider" id="slider">
                 <!-- slider 1 -->
                 <div class="slider__section slider__section--uno">
@@ -82,7 +111,7 @@
                     </div>
                     <div class="texto__slider">
                         <h2>Contamos con una gran variedad de productos</h2>
-                        <p>Busca el repuesto necesario para que tu auto quede flama.</p>
+                        <p>Busca el repuesto que necesita tu auto.</p>
                     </div>  
 
                 </div>
@@ -113,7 +142,8 @@
             <!-- boton derecha -->
             <div class="slider__btn slider__btn--right" id="btn--right"></div>
         </section>
-
+        <!-- end slider section -->
+        <!-- init infopagos section -->
         <section class="section__info__pagos section">
             <div class="pagos-container container">
                 <div class="info-pago">
@@ -146,7 +176,9 @@
                 </div>
             </div>
         </section>
-        <div class="promociones-bancarias hide-promociones-bancarias">
+        <!-- end infopagos section -->
+        <!-- init promociones bancarias absolute -->
+        <div class="promociones__bancarias hide-promociones-bancarias">
             <div class="promo-container">
                 <div class="head-promo">
                     <h2 class="title-promociones">Promociones Bancarias</h2>
@@ -188,8 +220,9 @@
                 <hr>
             </div>
         </div>
-
-        <div class="medios-pago promociones-bancarias hide-medios-pago">
+        <!-- end promociones bancarias absolute -->
+        <!-- init medios de pago absolute -->
+        <div class="medios__pago promociones__bancarias hide-medios-pago">
             <div class="promo-container">
                 <div class="head-promo">
                     <h2 class="title-promociones">Medios de pago</h2>
@@ -204,27 +237,38 @@
                     </div>
                     <button>Activar ahora</button>
                 </div>
-    
+                <!-- tarjetas de credito -->
                 <h3>Tarjetas de crédito en hasta 24 coutas</h3>
                 <h4>Acreditacion instantánea</h4>
                 <div class="img-promo-tarjetas">
+                    <!-- tarjeta credito 1 -->
                     <img src="./assets/images/visa.svg" alt="">
+                    <!-- tarjeta credito 2 -->
                     <img src="./assets/images/american-express.svg" alt="">
+                    <!-- tarjeta credito 3 -->
                     <img src="./assets/images/cordobesa.svg" alt="">
+                    <!-- tarjeta credito 4 -->
                     <img src="./assets/images/cabal.svg" alt="">
+                    <!-- tarjeta credito 5 -->
                     <img src="./assets/images/tarjeta-shopping.svg" alt="">
+                    <!-- tarjeta credito 6 -->
                     <img src="./assets/images/cencosud.svg" alt="">
+                    <!-- tarjeta credito 7 -->
                     <img src="./assets/images/naranja.svg" alt="">
+                    <!-- tarjeta credito 8 -->
                     <img src="./assets/images/mastercard.svg" alt="">
                 </div>
                 <p>Ver condiciones</p>
                 <hr>
-    
+                <!-- tarjetas de debito -->
                 <h3>Tarjetas de débito</span></h3>
                 <h4>Acreditación instantánea</h4>
                 <div class="img-promo-tarjetas">
+                    <!-- tarjeta debito 1 -->
                     <img src="./assets/images/visa-debito.svg" alt="">
+                    <!-- tarjeta debito 2 -->
                     <img src="./assets/images/mastercard-debito.svg" alt="">
+                    <!-- tarjeta debito 3 -->
                     <img src="./assets/images/cabal-debito.svg" alt="">
                 </div>
                 <p>Ver condiciones</p>
@@ -255,31 +299,36 @@
                 <p>Conocé más</p>
             </div>
         </div>
-        <section class="section__models section">
+        <!-- end medios de pago absolute -->
+        <!-- init models section -->
+        <section class="section__models section" id="section__models">
             <h2 class="title-section">Busca por modelo
             </h2>
             <div class="models-container container">
-                <div class="card-models model active" data-model="senda">
+                <!-- model 1 -->
+                <div class="card-models model" data-model="senda">
                     <img src="./assets/images/senda.png" alt="" class="img-model model" data-model="senda">
                     <p class="titulo-model" data-model="senda" >VW SENDA</p>
 
                 </div>
+                <!-- model 2 -->
                 <div class="card-models model" data-model="gacel">
                     <img src="./assets/images/Gacel_-removebg-preview-removebg-preview.png" alt="" class="img-model model" data-model="gacel">
                     <p class="titulo-model model" data-model="gacel">VW GACEL</p>
                     
                 </div>
-
+                <!-- model 3 -->
                 <div class="card-models model" data-model="gol">
                     <img src="./assets/images/gol.png" alt="" class="img-model model" data-model="gol">
                     <p class="titulo-model model" data-model="gol">VW GOL</p>
-                    
                 </div>
+                <!-- model 4 -->
                 <div class="card-models model" data-model="saveiro">
                     <img src="./assets/images/saveiro.png" alt="" class="img-model model" data-model="saveiro">
                     <p class="titulo-model model" data-model="saveiro">VW SAVEIRO</p>
                     
                 </div>
+                <!-- model 5 -->
                 <div class="card-models model"  data-model="pointer">
                     <img src="./assets/images/pointer.png" alt="" class="img-model model" data-model="pointer">
                     <p class="titulo-model model" data-model="pointer">VW POINTER</p>
@@ -287,24 +336,27 @@
                 </div>
             </div>
             <h2 class="title-section" id="title-container-models"></h2>
+            <!-- contenedor de productos segun el modelo seleccionado -->
             <div class="product__models container-products">
 
             </div> 
         </section>
-
-        <section class="section__category section" >
+        <!-- end models section -->
+        <!-- init category section -->
+        <section class="section__category section" id="section__category" >
             <h2 class="title-section">Buscá por categorias</h2>
             <div class="category-container container">
+                <!-- categoria 1 -->
                 <div class="card-category  category div1 active" data-category="repuestos">
                     <div class="img-cat"><img src="./assets/images/repuestos/radiador-senda-saveiro.jpg" alt="" class="img-category category" data-category="repuestos"></div>
                     <p class="titulo-category " >Repuestos Autos</p>
-
                 </div>
+                <!-- categoria 2 -->
                 <div class="card-category category div2" data-category="accesorios">
                     <div class="img-cat"><img src="./assets/images/repuestos/tasas.jpg" alt="" class="img-category category" data-category="accesorios"></div>
                     <p class="titulo-category" >Accesorios</p>
-
                 </div>
+                <!-- categoria 3 -->
                 <div class="card-category category div3" data-category="tunning">
                     <div class="img-cat"><img src="./assets/images/repuestos/luz-neon-interior.jpg" alt="" class="img-category category" data-category="tunning"></div>
                     <p class="titulo-category" >Tunning</p>
@@ -312,16 +364,19 @@
                 </div>
             </div>
             <h2 class="title-section" id="title-container-category"></h2>
+            <!-- contenedor de productos segun la categoria seleccionada -->
             <div class="product__category container-products" >
 
             </div>
         </section>
-
-        <section class="section__product__recomendation section">
+        <!-- end category section -->
+        <!-- init recomendation section -->
+        <section class="section__product__recomendation section" id="section__recomendation">
             <h2 class="title-section">Productos recomendados</h2>
+            <!-- contenedor de productos recomendados -->
             <div class="product__recomendation container container-products">
-                
         </section>
+        <!-- end recomendation section -->
 
         <section class="section__ver__todos section">
             <div class="ver-todos">
@@ -329,12 +384,13 @@
                 <button class="btn-ver-todos">Ver productos</button>
             </div>
         </section>
-
-        <section class="section__product__destacados section">
+        <!-- init destacados section -->
+        <section class="section__product__destacados section" id="section__destacados">
             <h2 class="title-section">Productos destacados</h2>
+            <!-- contenedor de productos destacados -->
             <div class="product__destacados container container-products">
-                
         </section>
+        <!-- end destacados section -->
 
         <section class="footer_main section">
             <div class="footer_main-container">
@@ -359,13 +415,21 @@
             <div class="footer-container">
                 <a href="./index.html" class="img-logo"><img src="./assets/images/logo.png" alt=""></a>
                 <ul class="category-footer">
+                    <!-- item 1 -->
                     <a href="#title-container-category" class="item" data-secundaria="iluminacion"><li class="item" data-secundaria="iluminacion">ILUMINACION</li></a>
+                    <!-- item 2 -->
                     <a href="#title-container-category" class="item" data-secundaria="carroceria"><li class="item" data-secundaria="carroceria">CARROCERIA</li></a>
+                    <!-- item 3 -->
                     <a href="#title-container-category" class="item" data-secundaria="baterias"><li class="item" data-secundaria="baterias">BATERIAS</li></a>
+                    <!-- item 4 -->
                     <a href="#title-container-category" class="item" data-secundaria="rodados"><li class="item" data-secundaria="rodados">RODADOS</li></a>
+                    <!-- item 5 -->
                     <a href="#title-container-category" class="item" data-secundaria="alternador"><li class="item" data-secundaria="alternador">ALTERNADORES</li></a>
+                    <!-- item 6 -->
                     <a href="#title-container-category" class="item" data-secundaria="motor"><li class="item" data-secundaria="motor">MOTOR</li></a>
+                    <!-- item 7 -->
                     <a href="#title-container-category" class="item" data-secundaria="frenos"><li class="item" data-secundaria="frenos">FRENOS</li></a>
+                    <!-- item 8 -->
                     <a href="#title-container-category" class="item" data-secundaria="radiadores"><li class="item" data-secundaria="radiadores">RADIADORES</li></a>
                 </ul>
                 <div class="contacto">

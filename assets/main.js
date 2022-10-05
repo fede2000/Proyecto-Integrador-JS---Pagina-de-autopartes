@@ -1,49 +1,107 @@
+// ---------- menu -------------
 const menuCate = document.querySelector('.menu__categorias')
+// boton abrir
 const menuImg = document.getElementById("menuImg");
+// boton cerrar
 const exitMenuImg = document.getElementById("exitMenu");
+// -----------------------------
+
+// ---------- buscador ---------
 const inputBuscador = document.getElementById("inputBuscador")
 const btnBuscador = document.getElementById("buttonBuscador")
+// -----------------------------
+
+// ---------- carrito ---------
 const cartItem = document.getElementById("cart")
-const exitCartImg = document.getElementById("exit");
-// carrito
+// boton abrir
 const cartShow = document.querySelector('.cart');
+// boton cerrar
+const exitCartImg = document.getElementById("exit");
 const overlay = document.querySelector('.overlay');
-// medios de pago
-const promoBancaria = document.querySelector(".promociones-bancarias");
-const exitPromo = document.querySelector(".exit-promo-banco")
-const exitTodosMediosPago = document.querySelector(".exit-todos-medios-pago")
-const imgPromoBanco = document.querySelector(".pago-uno")
-const imgTodosMediosPagoUno = document.querySelector(".pago-dos")
-const imgTodosMediosPagoDos = document.querySelector(".pago-tres")
-const imgTodosMediosPagoTres = document.querySelector(".pago-cuatro")
-const verPromoBanco = document.querySelector(".ver-uno")
-const verMasPagosUno = document.querySelector(".ver-dos")
-const verMasPagosDos = document.querySelector(".ver-tres")
-const verMasPagosTres = document.querySelector(".ver-cuatro")
-const mainHidden = document.querySelector(".main")
-
-const productsModels = document.querySelector(".product__models")
-const productsCategory = document.querySelector(".product__category")
-const productsRecomendation = document.querySelector(".product__recomendation")
-const productsDestacados = document.querySelector(".product__destacados")
-const modelCard = document.querySelector(".models-container")
-const categoryCard = document.querySelector(".category-container")
-const menuItem = document.querySelector(".menu__categorias")
-const menuItemFooter = document.querySelector(".category-footer")
-const titleContainerModels = document.querySelector("#title-container-models")
-const titleContainerCategory = document.querySelector("#title-container-category")
-
-
+// contenedor de productos del carrito
 const productsCart = document.querySelector(".cart-container");
+// total precio de productos
 const total = document.querySelector('.total');
+// subtotal precio de productos
 const subTotal = document.querySelector('.sub')
+// boton comprar
 const buyBtn = document.querySelector('.btn-buy');
 
-// todos los medios de pago
+// ----------------------------
+
+// ---------- medios de pago ----
+
+// div paga en coutas
+const imgPromoBanco = document.querySelector(".pago-uno")
+// div tarjeta de debito
+const imgTodosMediosPagoUno = document.querySelector(".pago-dos")
+// div efectivo
+const imgTodosMediosPagoDos = document.querySelector(".pago-tres")
+// div mas medios de pago
+const imgTodosMediosPagoTres = document.querySelector(".pago-cuatro")
+// abrir paga en coutas
+const verPromoBanco = document.querySelector(".ver-uno")
+// abrir tarjetas de debito
+const verMasPagosUno = document.querySelector(".ver-dos")
+// abrir efectivo
+const verMasPagosDos = document.querySelector(".ver-tres")
+// abrir mas medios de pago
+const verMasPagosTres = document.querySelector(".ver-cuatro")
+// contenedor promociones bancarias absolute
+const promoBancaria = document.querySelector(".promociones-bancarias");
+// contenedor todos los medios de pago absolute
 const todosMediosPago = document.querySelector(".medios-pago");
+// boton salir promos bancos
+const exitPromo = document.querySelector(".exit-promo-banco")
+// boton salir otros medios de pago
+const exitTodosMediosPago = document.querySelector(".exit-todos-medios-pago")
+
+// quitar scroll del main al abrir medios de pago
+const mainHidden = document.querySelector(".main")
+
+// ----------------------------------
+
+// -----------models-----------------
+const productsModels = document.querySelector(".product__models")
+const modelCard = document.querySelector(".models-container")
+const titleContainerModels = document.querySelector("#title-container-models")
+// ----------------------------------
+
+// -----------category---------------
+const productsCategory = document.querySelector(".product__category")
+const categoryCard = document.querySelector(".category-container")
+const titleContainerCategory = document.querySelector("#title-container-category")
+// ----------------------------------
+
+// -----------product recomendation---------
+const productsRecomendation = document.querySelector(".product__recomendation")
+// -----------product destacados -----------
+const productsDestacados = document.querySelector(".product__destacados")
+
+// menu footer
+const menuItem = document.querySelector(".menu__categorias")
+const menuItemFooter = document.querySelector(".category-footer")
+
+// ------------slider---------
+const slider = document.querySelector('#slider');
+let sliderSection = document.querySelectorAll('.slider__section');
+// boton slider izquierdo
+const btnLeft = document.querySelector('#btn--left');
+// boton slider derecho
+const btnRight = document.querySelector('#btn--right');
 
 
+// ______________________________________ funciones _______________________________
 
+// -------LOCAL STORAGE -----------------
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const saveLocalStorage = cartList => {
+  localStorage.setItem('cart', JSON.stringify(cartList));
+};
+
+
+// funcion para mostrar el menu de categorias
 const showMenuCate = () => {
     menuImg.addEventListener('click', () =>{
         menuCate.classList.toggle("hide");
@@ -56,6 +114,8 @@ const showMenuCate = () => {
         mainHidden.classList.toggle("hidden")
     }) 
 }
+
+// funcion para mostrar las promociones de pago
 const showPromoBanco = () => {
     imgPromoBanco.addEventListener('click', () =>{
         promoBancaria.classList.toggle("hide-promociones-bancarias");
@@ -73,6 +133,7 @@ const showPromoBanco = () => {
         mainHidden.classList.toggle("hidden")
     }) 
 }
+// funcion para mostrar todos los medios de pago
 const showTodosMediosPago = () => {
     imgTodosMediosPagoUno.addEventListener('click', () =>{
         todosMediosPago.classList.toggle("hide-medios-pago");
@@ -111,10 +172,10 @@ const showTodosMediosPago = () => {
     }) 
 }
 
+// funcion para mostrar buscador
 const showBuscador = () => {
     btnBuscador.addEventListener('click', () =>{
         if(inputBuscador.classList.contains("hide") == false){
-
         }
         else{
             inputBuscador.classList.toggle("hide")
@@ -122,34 +183,26 @@ const showBuscador = () => {
     })
 }
 
+// funcion para mostrar carrito
 const showCart = () => {
     cartItem.addEventListener('click', () =>{
-        console.log("ENTRO")
         cartShow.classList.toggle("hideCart");
         overlay.classList.toggle('show-overlay')
     })
     exitCartImg.addEventListener('click', ()=>{
-        console.log("ENTRO EXIT")
         cartShow.classList.toggle("hideCart");
         overlay.classList.remove('show-overlay')
     })
     
 }
 
-
-const slider = document.querySelector('#slider');
-
-let sliderSection = document.querySelectorAll('.slider__section');
+// -------------------------seccion slider---------------------------------------
 
 // variable para obtener el ultimo elemento del slider,para luego colocarlo en el inicio
 let sliderSectionLast = sliderSection[sliderSection.length - 1];
 
-const btnLeft = document.querySelector('#btn--left');
-const btnRight = document.querySelector('#btn--right');
-
 slider.insertAdjacentElement('afterbegin', sliderSectionLast); /* Insertamos el ultimo elemento del slide despues de que empiece */
-
-
+// funcion para mostrar el slider siguiente
 function Next(){
     let sliderSectionFirst = document.querySelectorAll('.slider__section')[0]; /* obtenemos el primer elemento */
     slider.style.marginLeft = '-200%';
@@ -160,6 +213,7 @@ function Next(){
         slider.style.marginLeft = '-100%';    
     }, 500);
 }
+// duncion para mostrar el slider anterior
 function Back(){
     let sliderSection = document.querySelectorAll('.slider__section');
     let sliderSectionLast = sliderSection[sliderSection.length -1];
@@ -185,11 +239,12 @@ setInterval(function(){
     Next();
 }, 5000);
 
-// funcion para renderizar productos por modelo de auto elegido
-const renderCard = product => {
+// ----------------------------------------finaliza seccion slider ----------------------
 
+// funcion para renderizar card de productos
+const renderCard = product => {
+    // desestructuramos el producto
     const{ id, price, description, cardImg} =  product;
-    console.log("rendercard")
     return`
     <div class="cards">
     <div class="img">                        
@@ -227,35 +282,14 @@ const renderProductsRandom = (contenedor,cantidad,funcionRender) => {
     contenedor.innerHTML = productsListRandom.map(funcionRender).join("")
 
 }
-
-
+// ------------------------------ seccion productos por modelo ----------------
+// funcion para renderizar productos por modelo de auto sleccionado
 const renderModel = (model) => {
     const listaProductos = productsData.filter(p => p.model === model);
     productsModels.innerHTML = listaProductos.map(renderCard).join('');
-
 };
 
-const renderCategory = (categoriaPrincipal) => {
-    
-    const listaProductos = productsData.filter(p => p.categoriaPrincipal === categoriaPrincipal);
-    productsCategory.innerHTML = listaProductos.map(renderCard).join('');
-
-};
-const renderCategorySecundary = (categoriaSecundaria) => {
-    console.log("rendercategorysecundary")
-    menuCate.classList.add("hide");
-    overlay.classList.remove('show-overlay')
-    mainHidden.classList.remove("hidden")
-    const listaProductos = productsData.filter(p => p.categoriaSecundaria === categoriaSecundaria);
-    productsCategory.innerHTML = listaProductos.map(renderCard).join('');
-
-};
-
-// const filterProducts = (e) => {
-//     if(!e.target.classList.contains('model')) return;
-//     console.log("ffilter")
-//     renderModel(e.target.dataset.category,0)
-// };
+// funcion para filtrar productos por modelo
 const filterProductsModel = (e) =>{
     if(!e.target.classList.contains('model')) return;
     // changeFilter(e);
@@ -263,38 +297,56 @@ const filterProductsModel = (e) =>{
     titleContainerModels.innerHTML = "Repuestos de VW "+e.target.dataset.model
 
 };
+// ---------------------------------------------------------------------------
+
+// ------------------------------ seccion productos por categoria-------------
+// funcion para renderizar productos por categoria seleccionada
+const renderCategory = (categoriaPrincipal) => {
+    const listaProductos = productsData.filter(p => p.categoriaPrincipal === categoriaPrincipal);
+    productsCategory.innerHTML = listaProductos.map(renderCard).join('');
+};
+
+// funcion para filtrar productos por categoria
 const filterProductsCategory = (e) =>{
     if(!e.target.classList.contains('category')) return;
     // changeFilter(e);
     renderCategory(e.target.dataset.category,0)
     titleContainerCategory.innerHTML = "Categoria "+e.target.dataset.category
 };
+// ----------------------------------------------------------------------------
 
+// ------------------------------- seccion productos por categoria secundaria ---------
+
+// funcion para renderizar productos por categoria secunsaria seleccionada desde el menu de categorias
+const renderCategorySecundary = (categoriaSecundaria) => {
+    menuCate.classList.add("hide");
+    overlay.classList.remove('show-overlay')
+    mainHidden.classList.remove("hidden")
+    const listaProductos = productsData.filter(p => p.categoriaSecundaria === categoriaSecundaria);
+    productsCategory.innerHTML = listaProductos.map(renderCard).join('');
+};
+
+// funcion para filtrar productos por categoria secundaria
 const filterProductsCategorySecundary = (e) =>{
     if(!e.target.classList.contains('item')) return;
     // changeFilter(e);
-    console.log("filtersecundary")
-    console.log(e.target.dataset.secundaria)
     renderCategorySecundary(e.target.dataset.secundaria,0)
     titleContainerCategory.innerHTML = "Categoria "+e.target.dataset.secundaria
 
 };
+// ----------------------------------------------------------------------------------------
 
-
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-const saveLocalStorage = cartList => {
-  localStorage.setItem('cart', JSON.stringify(cartList));
-};
-
+// ----------------------------------seccion carrito---------------------------------------
+// funcion para renderizar  card de productos en el carrito
 const renderCartProduct = cartProduct =>{
+    // desestructuramos el producto
     const{ id, price, description, cardImg, quantity} =  cartProduct;
     return`
         <div class="product_cart">
             <div class="item-product">
                 <img src="${cardImg}" alt="">
                 <div class="product_cart--description">
-                    <h2 class="title-card--cart">${description}</h2>
+                    <h2 class="title_card--cart">${description}</h2>
                     <span class="price"><span class="spacing-price">$</span>${price}</span>
                 </div>
             </div>
@@ -305,8 +357,8 @@ const renderCartProduct = cartProduct =>{
             </div>
         </div> 
     `
-
 }
+// funcion para renderizar contenido en el carrito
 const renderCart = (cartList) => {
     if(!cartList.length){
         productsCart.innerHTML = `<p class="empty-msg"> No hay productos en el carrito</p>`;
@@ -330,10 +382,9 @@ const disableBuyBtn = () =>{
         buyBtn.classList.remove('disabled')
     }
 }
-
-// ! funcion de suma-------------------------------------!
+// funcion agregar-restar producto en el carrito
 const handleQuantity = e =>{
-    // ! funcion down
+    // funcion restar producto
      if (e.target.classList.contains('down')) {
         const existingCartItem = cart.find(item => item.id === e.target.dataset.id);
         if(existingCartItem.quantity === 1){
@@ -352,7 +403,7 @@ const handleQuantity = e =>{
             ? {... item, quantity: Number(item.quantity) - 1}
             : item;
         });
-        // ! funcion up
+        // funcion sumar producto
      } else if (e.target.classList.contains('up')){
         const existingCartItem = cart.find(item => item.id === e.target.dataset.id);
         cart = cart.map((item) =>{
@@ -367,8 +418,8 @@ const handleQuantity = e =>{
         showTotal(cart);
         disableBuyBtn();
  }
-// !------------------------------------------------------------!
 
+// funcion para agregar producto al carrito
 const addProduct = (e) => {
     if(!e.target.classList.contains('add-btn')) return;
     const product = {
@@ -398,8 +449,7 @@ const addProduct = (e) => {
     showTotal(cart);
     disableBuyBtn();
 }
-// ---------------------------------------------------------------------------------------------------*
-
+// funcion para finalizar comprar
 const completeBuy = () => {
     if (!cart.length) return;
     if (window.confirm('¿Desea finalizar su compra?')) {
@@ -407,36 +457,56 @@ const completeBuy = () => {
         window.location.reload();
     }
 };
+// --------------------------------------------- finaliza seccion carrito--------------------
 
 
 
 
 const init = () =>{
+    // al iniciar la pagina cargar desde el local storage al carrito
     document.addEventListener('DOMContentLoaded', showTotal(cart));
     document.addEventListener('DOMContentLoaded', showSub(cart));
     document.addEventListener('DOMContentLoaded', renderCart(cart));
+    // -------------------------------------------------------------
     document.addEventListener('DOMContentLoaded', renderModel);
     document.addEventListener('DOMContentLoaded', renderCategory);
     document.addEventListener('DOMContentLoaded', renderCategorySecundary);
-    // console.log(productsData)
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsRecomendation,8,renderCard));
     document.addEventListener('DOMContentLoaded', renderProductsRandom(productsDestacados,8,renderCard));
+
+    // -----------seccion producto por modelo -----------------
+    // agregar productos por modelo
     productsModels.addEventListener('click', addProduct);
-    productsRecomendation.addEventListener('click',addProduct)
-    productsDestacados.addEventListener('click', addProduct);
+    // filtrar producto por modelo
+    modelCard.addEventListener("click",filterProductsModel)
+    // --------------------------------------------------------
+
+    // -----------seccion producto por categoria --------------
+    // agregar productos por categoria
     productsCategory.addEventListener('click',addProduct)
+    // filtrar producto por categoria
+    categoryCard.addEventListener("click",filterProductsCategory)
+    // --------------------------------------------------------
+
+    // agregar productos recomendados
+    productsRecomendation.addEventListener('click',addProduct)
+    // agregar productos destacados
+    productsDestacados.addEventListener('click', addProduct);
+    // sumar o restar producto en el carrito
     productsCart.addEventListener('click', handleQuantity);
+    // finalizar compra
+    buyBtn.addEventListener('click', completeBuy);
+    
+    
+    menuItem.addEventListener("click",filterProductsCategorySecundary)
+    menuItemFooter.addEventListener("click",filterProductsCategorySecundary)
+    
     showCart()
     showBuscador()
     showMenuCate()
     showPromoBanco()
     showTodosMediosPago()
-    modelCard.addEventListener("click",filterProductsModel)
-    categoryCard.addEventListener("click",filterProductsCategory)
-    menuItem.addEventListener("click",filterProductsCategorySecundary)
-    menuItemFooter.addEventListener("click",filterProductsCategorySecundary)
     disableBuyBtn();
-    buyBtn.addEventListener('click', completeBuy);
 }
 
 init()
