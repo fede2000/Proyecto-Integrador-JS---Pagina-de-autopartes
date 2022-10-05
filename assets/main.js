@@ -251,7 +251,7 @@ const renderCard = product => {
         <img src="${cardImg}" alt="" class="img-card">
     </div>
     <div class="info-card">
-        <h2 class="price">${price}</h2>
+        <h2 class="price">$${price}</h2>
         <p class="description">${description}</p>
     </div>
     <div class="button">
