@@ -16,7 +16,7 @@
             </div>
 
             <div class="img-principal">
-                <img src="assets/images/logo.png" alt="">
+                <a href="./index.html"><img src="assets/images/logo.png" alt=""></a>
             </div>
 
             <ul class="menu__navegacion">
@@ -33,10 +33,15 @@
         <ul class="menu__categorias hide">
             <i class="fa-regular fa-circle-xmark" id="exitMenu"></i>
             <h2>CATEGORIAS</h2>
-            <li class="item">ILUMINACION</li>
-            <li class="item">PARAGOLPES</li>
-            <li class="item">BATERIAS</li>
-            <li class="item">RODADOS</li>
+            
+            <a href="#title-container-category" class="item" data-secundaria="iluminacion"><li class="item" data-secundaria="iluminacion">ILUMINACION</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="carroceria"><li class="item" data-secundaria="carroceria">CARROCERIA</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="baterias"><li class="item" data-secundaria="baterias">BATERIAS</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="rodados"><li class="item" data-secundaria="rodados">RODADOS</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="alternador"><li class="item" data-secundaria="alternador">ALTERNADORES</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="motor"><li class="item" data-secundaria="motor">MOTOR</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="frenos"><li class="item" data-secundaria="frenos">FRENOS</li></a>
+            <a href="#title-container-category" class="item" data-secundaria="radiadores"><li class="item" data-secundaria="radiadores">RADIADORES</li></a>
         </ul>
 
         <div class="cart hideCart">
@@ -284,129 +289,38 @@
             <h2 class="title-section" id="title-container-models"></h2>
             <div class="product__models container-products">
 
-                    <!-- <div class="cards">
-                        <div class="img">                        
-                            <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                        </div>
-                        <div class="info-card">
-                            <h2 class="price">$15000</h2>
-                            <p class="description">Bateria Herbo 12x75</p>
-                        </div>
-                        <div class="button">
-                            <button class="add-btn"
-                            data-id="${id}"
-                            data-name="${name}"
-                            data-img=""
-                            data-price="${price}">Agregar</button>
-                        </div>
-                    </div>
-            </div> -->
+            </div> 
         </section>
 
-        <section class="section__category section">
+        <section class="section__category section" >
             <h2 class="title-section">Buscá por categorias</h2>
             <div class="category-container container">
-                <div class="card-category div1 active" data-category="repuestos">
-                    <div class="img-cat"><img src="./assets/images/repuestos/radiador-senda-saveiro.jpg" alt="" class="img-category"></div>
+                <div class="card-category  category div1 active" data-category="repuestos">
+                    <div class="img-cat"><img src="./assets/images/repuestos/radiador-senda-saveiro.jpg" alt="" class="img-category category" data-category="repuestos"></div>
                     <p class="titulo-category " >Repuestos Autos</p>
 
                 </div>
-                <div class="card-category div2" data-category="accesorios">
-                    <div class="img-cat"><img src="./assets/images/repuestos/tasas.jpg" alt="" class="img-category"></div>
+                <div class="card-category category div2" data-category="accesorios">
+                    <div class="img-cat"><img src="./assets/images/repuestos/tasas.jpg" alt="" class="img-category category" data-category="accesorios"></div>
                     <p class="titulo-category" >Accesorios</p>
 
                 </div>
-                <div class="card-category div3" data-category="tunning">
-                    <div class="img-cat">                    <img src="./assets/images/repuestos/luz-neon-interior.jpg" alt="" class="img-category"></div>
+                <div class="card-category category div3" data-category="tunning">
+                    <div class="img-cat"><img src="./assets/images/repuestos/luz-neon-interior.jpg" alt="" class="img-category category" data-category="tunning"></div>
                     <p class="titulo-category" >Tunning</p>
 
                 </div>
+            </div>
+            <h2 class="title-section" id="title-container-category"></h2>
+            <div class="product__category container-products" >
+
             </div>
         </section>
 
         <section class="section__product__recomendation section">
             <h2 class="title-section">Productos recomendados</h2>
             <div class="product__recomendation container container-products">
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
+                
         </section>
 
         <section class="section__ver__todos section">
@@ -419,86 +333,7 @@
         <section class="section__product__destacados section">
             <h2 class="title-section">Productos destacados</h2>
             <div class="product__destacados container container-products">
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="img">                        
-                        <img src="./assets/images/repuestos/bateria-12x75-herbo.jpg" alt="" class="img-card">
-                    </div>
-                    <div class="info-card">
-                        <h2 class="price">$15000</h2>
-                        <p class="description">Bateria Herbo 12x75</p>
-                    </div>
-                    <div class="button">
-                        <button class="add-btn"
-                        data-id="${id}"
-                        data-name="${name}"
-                        data-img=""
-                        data-price="${price}">Agregar</button>
-                    </div>
-                </div>
+                
         </section>
 
         <section class="footer_main section">
@@ -524,11 +359,14 @@
             <div class="footer-container">
                 <a href="./index.html" class="img-logo"><img src="./assets/images/logo.png" alt=""></a>
                 <ul class="category-footer">
-                    <li>Iluminacion</li>
-                    <li>Paragolpes</li>
-                    <li>Baterias</li>
-                    <li>Tazas</li>
-                    <li>Carroceria</li>
+                    <a href="#title-container-category" class="item" data-secundaria="iluminacion"><li class="item" data-secundaria="iluminacion">ILUMINACION</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="carroceria"><li class="item" data-secundaria="carroceria">CARROCERIA</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="baterias"><li class="item" data-secundaria="baterias">BATERIAS</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="rodados"><li class="item" data-secundaria="rodados">RODADOS</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="alternador"><li class="item" data-secundaria="alternador">ALTERNADORES</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="motor"><li class="item" data-secundaria="motor">MOTOR</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="frenos"><li class="item" data-secundaria="frenos">FRENOS</li></a>
+                    <a href="#title-container-category" class="item" data-secundaria="radiadores"><li class="item" data-secundaria="radiadores">RADIADORES</li></a>
                 </ul>
                 <div class="contacto">
                     <div class="redes">
@@ -543,8 +381,8 @@
             <hr>
         </footer>
     </main>
-
-    <script src="./assets/main.js"></script>
     <script src="./assets/data.js"></script>
+    <script src="./assets/main.js"></script>
+
 </body>
 </html>
