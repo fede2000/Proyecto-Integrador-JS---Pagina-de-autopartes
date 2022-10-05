@@ -48,9 +48,9 @@ const verMasPagosDos = document.querySelector(".ver-tres")
 // abrir mas medios de pago
 const verMasPagosTres = document.querySelector(".ver-cuatro")
 // contenedor promociones bancarias absolute
-const promoBancaria = document.querySelector(".promociones-bancarias");
+const promoBancaria = document.querySelector(".promociones__bancarias");
 // contenedor todos los medios de pago absolute
-const todosMediosPago = document.querySelector(".medios-pago");
+const todosMediosPago = document.querySelector(".medios__pago");
 // boton salir promos bancos
 const exitPromo = document.querySelector(".exit-promo-banco")
 // boton salir otros medios de pago
